@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #070a12;
+  --liberty: #4f9cf0;
+  --dignity: #e9b54e;
+  --justice: #3fc4b0;
+  --power: #e0556b;
+  --bone: #f3f7fd;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--void);
+  color: var(--bone);
+}
+
+body {
+  background-color: #060912;
+  background-image:
+    radial-gradient(ellipse 1200px 620px at 12% -8%, rgba(79, 156, 240, 0.13), transparent 60%),
+    radial-gradient(ellipse 980px 560px at 90% 4%, rgba(233, 181, 78, 0.09), transparent 62%),
+    radial-gradient(ellipse 1100px 600px at 80% 98%, rgba(63, 196, 176, 0.10), transparent 60%),
+    radial-gradient(ellipse 1000px 560px at 16% 112%, rgba(79, 156, 240, 0.08), transparent 60%);
+  font-family: "Spectral", ui-serif, Georgia, serif;
+  letter-spacing: 0.004em;
+}
+
+::selection {
+  background: rgba(79, 156, 240, 0.38);
+  color: #061018;
+}
+
+/* ---------- type ---------- */
+.display { font-family: "Newsreader", ui-serif, Georgia, serif; font-weight: 500; }
+.zh { font-family: "Noto Serif SC", serif; }
+.label-mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.64rem;
+  color: #6cd9c8;
+}
+
+/* ---------- luminous text ---------- */
+.glow-text {
+  color: #fadfa6;
+  text-shadow: 0 0 18px rgba(233, 181, 78, 0.55), 0 0 54px rgba(79, 156, 240, 0.32);
+}
+.liberty-text {
+  color: #a6d0fb;
+  text-shadow: 0 0 18px rgba(79, 156, 240, 0.55);
+}
+.justice-text {
+  color: #9fe9dd;
+  text-shadow: 0 0 18px rgba(63, 196, 176, 0.5);
+}
+.dignity-text {
+  color: #fadfa6;
+  text-shadow: 0 0 18px rgba(233, 181, 78, 0.55);
+}
+.power-text {
+  color: #f4abb5;
+  text-shadow: 0 0 18px rgba(224, 85, 107, 0.5);
+}
+
+/* ---------- cool translucent card ---------- */
+.card {
+  background: linear-gradient(160deg, rgba(23, 32, 51, 0.82), rgba(10, 15, 28, 0.9));
+  border: 1px solid rgba(79, 156, 240, 0.14);
+  backdrop-filter: blur(7px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+.card:hover { border-color: rgba(79, 156, 240, 0.34); }
+
+.rule-warm {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79, 156, 240, 0.5) 18%, rgba(233, 181, 78, 0.42) 82%, transparent);
+}
+
+/* ---------- breathing interface ---------- */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.75; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+.breathe { animation: breathe 7s ease-in-out infinite; }
+
+@keyframes glowpulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.glow-pulse { animation: glowpulse 3.2s ease-in-out infinite; }
+
+/* pulsing svg nodes */
+@keyframes nodepulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.node-pulse { animation: nodepulse 2.8s ease-in-out infinite; }
+
+/* flowing dashed stroke */
+@keyframes flow { to { stroke-dashoffset: -40; } }
+.flow { stroke-dasharray: 5 7; animation: flow 1.8s linear infinite; }
+
+/* rise in */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: riseIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* travelling spark along a path (offset-path set inline) */
+@keyframes spark {
+  0% { offset-distance: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* slow drift for soft particles */
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  14% { opacity: 0.7; }
+  100% { transform: translateY(-70px) translateX(24px); opacity: 0; }
+}
+
+::-webkit-scrollbar { width: 10px; background: #060912; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #212c44, #172033);
+  border-radius: 5px;
+}
+
+/* language fade on toggle */
+.lang-fade { animation: riseIn 0.45s ease both; }
+
+/* range input — institutional blue */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(79, 156, 240, 0.22);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #a6d0fb;
+  box-shadow: 0 0 12px rgba(79, 156, 240, 0.8);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #a6d0fb;
+  box-shadow: 0 0 12px rgba(79, 156, 240, 0.8);
+  cursor: pointer;
+}

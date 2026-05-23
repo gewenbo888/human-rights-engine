@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="62%">
+      <stop offset="0%" stop-color="#fadfa6"/>
+      <stop offset="45%" stop-color="#e9b54e"/>
+      <stop offset="100%" stop-color="#4f9cf0"/>
+    </radialGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#0a0f1c"/>
+  <!-- protective arc: institutions enclosing the person -->
+  <path d="M6 19 A10 10 0 0 1 26 19" fill="none" stroke="#4f9cf0" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+  <!-- the luminous person -->
+  <circle cx="16" cy="13.4" r="2.7" fill="url(#g)"/>
+  <path d="M16 16 L16 21.5 M16 17.6 L12.4 19.4 M16 17.6 L19.6 19.4" stroke="url(#g)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+  <!-- the rule-of-law line -->
+  <line x1="8" y1="25" x2="24" y2="25" stroke="#3fc4b0" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
